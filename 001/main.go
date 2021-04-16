@@ -7,5 +7,14 @@ import (
 )
 
 func main() {
-	fmt.Println("sss")
+
+	var data int
+
+	go func() {
+		data++
+	}()
+
+	if data == 0 {
+		fmt.Printf("the value is %v. \n", data)
+	}
 }
