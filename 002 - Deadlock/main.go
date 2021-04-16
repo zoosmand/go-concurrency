@@ -14,6 +14,8 @@ type value struct {
 }
 
 func main() {
+	fmt.Println("002 - Deadlock")
+
 	var wg sync.WaitGroup
 
 	printSum := func(v1, v2 *value) {

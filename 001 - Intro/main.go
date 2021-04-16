@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	fmt.Println("001 - Intro")
 
 	var memoryAccess sync.Mutex
 	var value int
