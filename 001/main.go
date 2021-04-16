@@ -4,19 +4,27 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
 
 func main() {
 
-	var data int
+	var memoryAccess sync.Mutex
+	var value int
 
 	go func() {
-		data++
+		memoryAccess.Lock()
+		value++
+		memoryAccess.Unlock()
 	}()
 
-	if data == 0 {
+	memoryAccess.Lock()
+
+	if value == 0 {
 		fmt.Println("the value is 0.")
 	} else {
-		fmt.Printf("the value is %v. \n", data)
+		fmt.Printf("the value is %v. \n", value)
 	}
+
+	memoryAccess.Unlock()
 }
