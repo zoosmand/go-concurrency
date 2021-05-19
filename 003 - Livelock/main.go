@@ -37,6 +37,7 @@ func main() {
 
 		takeStep()
 		atomic.AddInt32(dir, -1)
+
 		return false
 	}
 
