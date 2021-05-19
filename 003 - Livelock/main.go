@@ -11,7 +11,8 @@ import (
 )
 
 func main() {
-	fmt.Println("003 - Livelock")
+	fmt.Print("\n003 - Livelock")
+	fmt.Print("\n-------------------\n\n")
 
 	cadence := sync.NewCond(&sync.Mutex{})
 	go func() {

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Print("\n004 - Greede Worker")
+	fmt.Print("\n004 - Greedy Worker")
 	fmt.Print("\n-------------------\n\n")
 
 	var wg sync.WaitGroup
