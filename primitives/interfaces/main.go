@@ -65,6 +65,12 @@ func main() {
 // 	w := distance(x1, y1, x2, y1)
 // 	return l * w
 // }
+func distance(x1, y1, x2, y2 float64) float64 {
+	a := x2 - x1
+	b := y2 - y1
+	return math.Sqrt(a*a + b*b)
+}
+
 func (c *Circle) area() float64 {
 	return math.Pi * c.r * c.r
 }
@@ -81,12 +87,6 @@ func (m *MultiShape) area() float64 {
 		area += s.area()
 	}
 	return area
-}
-
-func distance(x1, y1, x2, y2 float64) float64 {
-	a := x2 - x1
-	b := y2 - y1
-	return math.Sqrt(a*a + b*b)
 }
 
 // func totalArea(ciscles []Circle, rectangles []Rectangle) float64 {
