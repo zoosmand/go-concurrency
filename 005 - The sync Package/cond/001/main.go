@@ -1,10 +1,14 @@
 package main
 
-import "sync"
+import (
+	"sync"
+	"time"
+)
 
 func main() {
 
 	conditionTrue := func() bool {
+		time.Sleep(time.Millisecond * 5)
 		return true
 	}
 

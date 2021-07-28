@@ -27,7 +27,7 @@ func main() {
 		defer l.Unlock()
 	}
 
-	test := func(count int, mutex, rwMitex sync.Locker) time.Duration {
+	test := func(count int, mutex, rwMutex sync.Locker) time.Duration {
 		var wg sync.WaitGroup
 		wg.Add(count + 1)
 		beginTestTime := time.Now()
@@ -35,7 +35,7 @@ func main() {
 		go producer(&wg, mutex)
 
 		for i := count; i > 0; i-- {
-			go observer(&wg, mutex)
+			go observer(&wg, rwMutex)
 		}
 
 		wg.Wait()
@@ -46,6 +46,8 @@ func main() {
 	defer tw.Flush()
 
 	var m sync.RWMutex
+	// var n sync.Mutex
+
 	fmt.Fprintf(tw, "Readers\tRWMutex\tMutex\n")
 
 	for i := 0; i < 20; i++ {

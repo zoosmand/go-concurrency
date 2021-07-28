@@ -17,7 +17,7 @@ func (p *Person) Talk() {
 	fmt.Println("Hi, my name is", p.Name)
 }
 
-func (p *Person) Listen(what string) {
+func (a *Android) Listen(what string) {
 	fmt.Println("I'm listening to", what)
 }
 
@@ -38,4 +38,5 @@ func main() {
 	r := new(Robot)
 	r.Name = "Jack"
 	r.Talk()
+
 }
